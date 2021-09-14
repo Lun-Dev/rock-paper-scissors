@@ -1,4 +1,5 @@
 let selection = ["Rock", "Paper", "Scissors"];
+let randomChoice = selection[Math.floor(Math.random() * selection.length)]
 
 function computerPlay() {
     let rand = Math.random();
