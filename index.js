@@ -1,3 +1,16 @@
+let playerSelection = "Rock"
+let computerSelection = ["Rock", "Paper", "Scissors"];
+
+function playerPlay(clicked_id) {
+    if (clicked_id === "playerRockBtn") {
+        return playerSelection = "Rock"
+    } else if (clicked_id === "playerPaperBtn") {
+        return playerSelection = "Paper"
+    } else {
+        return playerSelection = "Scissors"
+    }
+}
+
 function computerPlay() {
     let randomSelection = Math.floor(Math.random() * computerSelection.length)
     return computerSelection = computerSelection[randomSelection]
@@ -19,8 +32,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let playerSelection = "Rock"
-let computerSelection = ["Rock", "Paper", "Scissors"];
 
 console.log(playerSelection)
 console.log(computerPlay())
