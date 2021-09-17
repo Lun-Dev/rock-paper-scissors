@@ -1,8 +1,12 @@
 let playerSelection = "Rock"
 let computerSelection = ["Rock", "Paper", "Scissors"];
-let result = document.getElementById("resultEl")
-let playerChoice = document.getElementById("playerChoiceEl")
-let computerChoice = document.getElementById("computerChoiceEl")
+let result = document.querySelector("#resultEl")
+let playerChoice = document.querySelector("#playerChoiceEl")
+let computerChoice = document.querySelector("#computerChoiceEl")
+let playerScore = 0
+let computerScore = 0
+let playerScores = document.querySelector("#playerScoreEl")
+let computerScores = document.querySelector("#computerScoreEl")
 
 function playerPlay(clicked_id) {
     if (clicked_id === "playerRockBtn") {
@@ -21,26 +25,33 @@ function computerPlay() {
     return computerSelection[randomSelection]
 }
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerPlay().toLowerCase();
-     if (playerSelection === "rock" && computerSelection === "paper" || 
-        playerSelection === "paper" && computerSelection === "scissors" ||
-        playerSelection === "scissors" && computerSelection === "rock") {
-        result.textContent = `Result: You Lose! ${computerSelection} beats ${playerSelection}`
-        playerChoice.textContent = `Player's Choice: ${playerSelection}`
-        computerChoice.textContent = `Computer's Choice: ${computerSelection}`
-    } else if (playerSelection === "rock" && computerSelection === "scissors" || 
-               playerSelection === "paper" && computerSelection === "rock" ||
-               playerSelection === "scissors" && computerSelection === "paper") {
-        result.textContent = `Result: You Win! ${playerSelection} beats ${computerSelection}`
-        playerChoice.textContent = `Player's Choice: ${playerSelection}`
-        computerChoice.textContent = `Computer's Choice: ${computerSelection}`
-    } else {
-        result.textContent = "Result: Draw"
-        playerChoice.textContent = `Player's Choice: ${playerSelection}`
-        computerChoice.textContent = `Computer's Choice: ${computerSelection}`
-    }
+function capitalize(word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
 }
 
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection;
+    computerSelection = computerPlay();
+     if (playerSelection === "Rock" && computerSelection === "Paper" || 
+        playerSelection === "Paper" && computerSelection === "Scissors" ||
+        playerSelection === "scissors" && computerSelection === "Rock") {
+        result.textContent = `Result: You Lose! ${capitalize(computerSelection)} beats ${capitalize(playerSelection)}`
+        playerChoice.textContent = `Player's Choice: ${capitalize(playerSelection)}`
+        computerChoice.textContent = `Computer's Choice: ${capitalize(computerSelection)}`
+        computerScore++
+        computerScores.textContent = `Copmuter's Score: ${computerScore}`
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors" || 
+               playerSelection === "Paper" && computerSelection === "Rock" ||
+               playerSelection === "Scissors" && computerSelection === "Paper") {
+        result.textContent = `Result: You Win! ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}`
+        playerChoice.textContent = `Player's Choice: ${capitalize(playerSelection)}`
+        computerChoice.textContent = `Computer's Choice: ${capitalize(computerSelection)}`
+        playerScore++
+        playerScores.textContent = `Player's Score: ${playerScore}`
+    } else {
+        result.textContent = "Result: Draw"
+        playerChoice.textContent = `Player's Choice: ${capitalize(playerSelection)}`
+        computerChoice.textContent = `Computer's Choice: ${capitalize(computerSelection)}`
+    }
+}
 
