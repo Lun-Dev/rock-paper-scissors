@@ -1,12 +1,18 @@
-let playerSelection = "Rock"
+// Global Variable //
+let playerScore = 0
+let computerScore = 0
+let playerSelection = ""
 let computerSelection = ["Rock", "Paper", "Scissors"];
 let result = document.querySelector("#resultEl")
 let playerChoice = document.querySelector("#playerChoiceEl")
 let computerChoice = document.querySelector("#computerChoiceEl")
-let playerScore = 0
-let computerScore = 0
 let playerScores = document.querySelector("#playerScoreEl")
 let computerScores = document.querySelector("#computerScoreEl")
+
+// Function //
+function capitalize(word) {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+}
 
 function playerPlay(clicked_id) {
     if (clicked_id === "playerRockBtn") {
@@ -23,10 +29,6 @@ function playerPlay(clicked_id) {
 function computerPlay() {
     let randomSelection = Math.floor(Math.random() * computerSelection.length)
     return computerSelection[randomSelection]
-}
-
-function capitalize(word) {
-    return word[0].toUpperCase() + word.slice(1).toLowerCase();
 }
 
 function playRound(playerSelection, computerSelection) {
