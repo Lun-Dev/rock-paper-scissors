@@ -3,11 +3,11 @@ let playerScore = 0
 let computerScore = 0
 let playerSelection = ""
 let computerSelection = ["Rock", "Paper", "Scissors"];
-let result = document.querySelector("#resultEl")
-let playerChoice = document.querySelector("#playerChoiceEl")
-let computerChoice = document.querySelector("#computerChoiceEl")
-let playerScores = document.querySelector("#playerScoreEl")
-let computerScores = document.querySelector("#computerScoreEl")
+const result = document.querySelector("#resultEl")
+const playerChoice = document.querySelector("#playerChoiceEl")
+const computerChoice = document.querySelector("#computerChoiceEl")
+const playerScores = document.querySelector("#playerScoreEl")
+const computerScores = document.querySelector("#computerScoreEl")
 
 // Function //
 function capitalize(word) {
