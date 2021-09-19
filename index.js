@@ -10,9 +10,9 @@ const playerScores = document.querySelector("#playerScoreEl")
 const computerScores = document.querySelector("#computerScoreEl")
 
 // Function //
-function wow() {
-    if (computerScore === 5) {
-        alert("wow")
+function gameEnd() {
+    if (computerScore === 5 || playerScore === 5) {
+        result.textContent = "Game Over"
     }
 }
 
@@ -30,7 +30,7 @@ function playerPlay(clicked_id) {
     }
     computerPlay()
     playRound(playerSelection, computerSelection)
-    wow()
+    gameEnd()
 }
 
 function computerPlay() {
@@ -48,7 +48,7 @@ function playRound(playerSelection, computerSelection) {
         playerChoice.textContent = `Player's Choice: ${capitalize(playerSelection)}`
         computerChoice.textContent = `Computer's Choice: ${capitalize(computerSelection)}`
         computerScore++
-        computerScores.textContent = `Copmuter's Score: ${computerScore}`
+        computerScores.textContent = `Computer's Score: ${computerScore}`
     } else if (playerSelection === "Rock" && computerSelection === "Scissors" || 
                playerSelection === "Paper" && computerSelection === "Rock" ||
                playerSelection === "Scissors" && computerSelection === "Paper") {
