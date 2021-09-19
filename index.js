@@ -10,6 +10,12 @@ const playerScores = document.querySelector("#playerScoreEl")
 const computerScores = document.querySelector("#computerScoreEl")
 
 // Function //
+function wow() {
+    if (computerScore === 5) {
+        alert("wow")
+    }
+}
+
 function capitalize(word) {
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
 }
@@ -24,6 +30,7 @@ function playerPlay(clicked_id) {
     }
     computerPlay()
     playRound(playerSelection, computerSelection)
+    wow()
 }
 
 function computerPlay() {
