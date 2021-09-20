@@ -1,18 +1,21 @@
 // Global Variable //
-let playerScore = 0
-let computerScore = 0
-let playerSelection = ""
+let playerScore = 0;
+let computerScore = 0;
+let playerSelection = "";
 let computerSelection = ["Rock", "Paper", "Scissors"];
-const result = document.querySelector("#resultEl")
-const playerChoice = document.querySelector("#playerChoiceEl")
-const computerChoice = document.querySelector("#computerChoiceEl")
-const playerScores = document.querySelector("#playerScoreEl")
-const computerScores = document.querySelector("#computerScoreEl")
+const result = document.querySelector("#resultEl");
+const playerChoice = document.querySelector("#playerChoiceEl");
+const computerChoice = document.querySelector("#computerChoiceEl");
+const playerScores = document.querySelector("#playerScoreEl");
+const computerScores = document.querySelector("#computerScoreEl");
 
 // Function //
 function gameEnd() {
     if (computerScore === 5 || playerScore === 5) {
         result.textContent = "Game Over"
+        document.getElementById("playerRockBtn").disabled = true;
+        document.getElementById("playerPaperBtn").disabled = true;
+        document.getElementById("playerScissorsBtn").disabled = true;
     }
 }
 
