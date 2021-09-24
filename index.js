@@ -1,7 +1,7 @@
 // Global Variable //
 let playerScore = 0;
 let computerScore = 0;
-let playerSelection = "";
+const playerSelection = "";
 const computerSelection = ["Rock", "Paper", "Scissors"];
 const result = document.querySelector("#resultEl");
 const playerChoice = document.querySelector("#playerChoiceEl");
@@ -24,13 +24,10 @@ function capitalize(word) {
 }
 
 function playerPlay(clicked_id) {
-    if (clicked_id === "playerRockBtn") {
-        playerSelection = "Rock"
-    } else if (clicked_id === "playerPaperBtn") {
-        playerSelection = "Paper"
-    } else {
-        playerSelection = "Scissors"
-    }
+    const playerSelection = 
+        clicked_id === "playerRockBtn" ? "Rock" :
+        clicked_id === "playerPaperBtn" ? "Paper" :
+        "Scissors"; //Ternary Operator
     computerPlay()
     playRound(playerSelection, computerSelection)
     gameEnd()
